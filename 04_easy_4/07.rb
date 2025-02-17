@@ -97,11 +97,9 @@ DIGITS = {
 
 def string_to_integer(string)
   digits = string.chars.map { |char| DIGITS[char] }
-  p digits
   value = 0
-  digits.each do |digit| 
+  digits.each do |digit|
     value = 10 * value + digit
-    p value
   end
   value
 end
