@@ -1,0 +1,3 @@
+Do you notice the pattern in our answer? Every light that is on is a perfect square. Why is that?
+
+A: The reason every light that is on is a perfect square is because those lights, as they are at positions of numbers that are perfect squares, have been toggled exactly three times. Every light has been toggled once (in the first run), but only those ones on perfect square positions are toggled two more times. For instance, the light at position 49 are toggled in the first, seventh, and fourty-nineth runs. In contrast, the lights at other positions are only toggled once more after the first run.
