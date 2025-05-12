@@ -35,3 +35,19 @@ def valid_series?(nums)
   odd_count = nums.count { |n| n.odd? }
   odd_count == 3 ? true : false
 end
+
+=begin
+FURTHER EXPLORATION
+
+If you take a close look at odd_count == 3 ? true : false, you see that the
+equality comparison odd_count == 3 itself returns a Boolean. Is the ternary
+operator on line 5 really necessary in order to return a Boolean from our
+method?
+=end
+
+def valid_series?(nums)
+  return false if nums.sum != 47
+
+  odd_count = nums.count { |n| n.odd? }
+  odd_count == 3 # No, the ternary operator on line 5 is not necessary
+end

@@ -5,6 +5,7 @@ Our countdown to launch isn't behaving as expected. Why?
 Change the code so that our program successfully counts down from 10 to 1.
 =end
 
+=begin
 def decrease(counter)
   counter -= 1
 end
@@ -17,6 +18,7 @@ counter = 10
 end
 
 puts 'LAUNCH!'
+=end
 
 =begin
 Without running this code to see its output, I believe this code outputs 10
@@ -32,9 +34,9 @@ def decrease(counter)
   counter -= 1
 end
 
-counter = 10
+counter = 8
 
-10.times do
+counter.times do # FURTHER EXPLORATION
   puts counter
   counter = decrease(counter)
 end

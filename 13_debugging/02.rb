@@ -31,3 +31,11 @@ def shout_out_to(name)
 end
 
 shout_out_to('you')
+
+=begin
+NOTE
+
+The String#chars method returns an array of the characters in a string, so
+name.chars in our example returns ['y', 'o', 'u']. These character strings are
+new String objects, different from the name string.
+=end
