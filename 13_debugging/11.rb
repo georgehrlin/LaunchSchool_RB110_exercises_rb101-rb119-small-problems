@@ -6,12 +6,10 @@ However, the output is wrong. Without removing any code, help Josh get the
 expected output.
 =end
 
-=begin
 arr = ["9", "8", "7", "10", "11"]
 p arr.sort do |x, y|
     y.to_i <=> x.to_i
   end
-=end
 
 # Expected output: ["11", "10", "9", "8", "7"]
 # Actual output: ["10", "11", "7", "8", "9"]
@@ -28,3 +26,19 @@ arr = ["9", "8", "7", "10", "11"]
 p (arr.sort do |x, y|
     y.to_i <=> x.to_i
   end)
+
+# OFFICIAL SOLUTION
+arr = ["9", "8", "7", "10", "11"]
+p (
+   arr.sort do |x, y|
+     y.to_i <=> x.to_i
+   end
+)
+
+# By Karis Tobias
+arr = ["9", "8", "7", "10", "11"]
+arr_sorted = arr.sort do |x, y|
+               y.to_i <=> x.to_i
+             end
+
+p arr_sorted

@@ -1,10 +1,8 @@
 =begin
-I did not end up coming up with a solution for this question. I was hard stuck
-at the first sub-problem for a few days: I did not know how to make the method
-continuously break itself in the middle until each subarray the lowest level
-only contains one element.
+FURTHER EXPLORATION
 
-08_1.rb contains all of my effort in trying to solve the problem myself.
+Every recursive algorithm can be reworked as a non-recursive algorithm. Can you
+write a method that performs a non-recursive merge sort?
 =end
 
 def sorted_insert(n, arr)
@@ -36,7 +34,14 @@ def merge(arr1, arr2)
   arr_result
 end
 
-# OFFICIAL SOLUTION
+=begin
+- Initialize a result arr
+- Assign halves of input arr to two vars
+  - Assign two empty subarrays to result arr
+- Append first and second half arrs to result
+- 
+=end
+
 def merge_sort(array)
   return array if array.size == 1
 
@@ -49,6 +54,3 @@ def merge_sort(array)
   merge(sub_array_1, sub_array_2)
 end
 
-arr = [9, 2, 7, 6, 8, 5, 0, 1]
-
-p merge_sort(arr)
