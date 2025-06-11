@@ -42,3 +42,12 @@ counter.times do # FURTHER EXPLORATION
 end
 
 puts 'LAUNCH!'
+
+=begin
+ADDENDUM
+
+"The issue of the original code snippet has to do with Ruby's pass-by-value
+behaviour for immutable objects like integers. When you pass counter to the
+decrease method, you're passing the value, not a reference to the variable
+itself."
+=end

@@ -54,7 +54,7 @@ As for idf, while I don't understand why the final value is calculated with a
 logarithm, I did realize that Math.log only returns a 0 if the argument
 provided to it is 1. That was when I realized something must be wrong with the
 argument provided to Math.log, and that is exactly where the bug lies. The
-division on 26 is an integer division because number_of_documents and
+division on line 26 is an integer division because number_of_documents and
 number_of_documents_with_term are always assigned an integer.
 =end
 
@@ -62,14 +62,14 @@ require 'pry'
 
 # Fix
 def tfidf(term, document, documents)
-  p tf(term, document) * idf(term, documents)
+  tf(term, document) * idf(term, documents)
 end
 
 # Term frequency (simple version):
 # the number of times a term occurs in a document
 
 def tf(term, document)
-  p document.split(/[\s,.-]/).count { |word| word.downcase == term }
+  document.split(/[\s,.-]/).count { |word| word.downcase == term }
 end
 
 # Inverse document frequency:
@@ -81,9 +81,8 @@ def idf(term, documents)
   number_of_documents = documents.length.to_f
   number_of_documents_with_term = documents.count { |d| tf(term, d) > 0 }
   quotient = number_of_documents / number_of_documents_with_term
-  binding.pry
 
-  p Math.log(quotient)
+  Math.log(quotient)
 end
 
 # Very simple example

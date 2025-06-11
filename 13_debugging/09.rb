@@ -62,15 +62,22 @@ Without running the faulty code, I see there are a few problems with the code:
 =end
 
 =begin
-CORRECTION
+ADDENDUM
 
 I didn't see that the original code does not have an end keyword on line 26 to
-close the if statements before line 28. The faulty code continues infinitely
-if the player does not guess the number correctly in their first attempt before
-winning_number is reset to a different value.
+close the if statements before line 28.
+
+A more precise diagnosis of the faulty code should be:
+1. Lines 10 and 11 should still be moved to the end of guess_number in case
+   max_attempts is 1.
+2. When the user makes a correct guess, the game still continues because that
+   branch of the if statement is missing a break keyword.
+3. When the user makes an incorrect guess, the game resets by calling itself
+   recursively. This is unnecessary because the if statement is already
+   contained in a loop.
 =end
 
-# Fix
+# FIX
 def valid_integer?(string)
   string.to_i.to_s == string
 end

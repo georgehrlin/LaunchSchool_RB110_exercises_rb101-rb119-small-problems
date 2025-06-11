@@ -15,11 +15,11 @@ end
 shout_out_to('you') # expected: 'HEY YOU'
 
 =begin
-On line 15, shout_out_to is called with 'you' as the argument. The method
-parameter name is then assigned 'you'. Once line 10 is reached, the method
+On line 7, shout_out_to is called with 'you' as the argument. The method
+parameter name is then assigned 'you'. Once line 2 is reached, the method
 #chars is first called on name before being chained with #each. Even though
 #upcase! is a mutating method, it fails to mutate the characters of name
-because #chars returns a new array of strings. Therefore, upcase! ends up
+because #chars returns a new array of strings. Therefore, #upcase! ends up
 mutating the individual strings in this new array instead of 'you'.
 =end
 

@@ -47,14 +47,14 @@ to password. Otherwise password will always be nil.
 
 =begin
 Once I fixed the update password issue, I finally noticed that the method
-verify_password also contains a bug. When line 64 is reached, because of
+verify_password also contains a bug. When line 14 is reached, because of
 verify_password's self-contained scope, password has not been initialized yet.
 (At this point, I still haven't run the faulty code, so I am not entirely sure
 how it behaves.) For the code to behave as intended, the outer local variable
 password must be passed into verify_password as an argument.
 =end
 
-# Fix
+# FIX
 password = nil
 
 def set_password

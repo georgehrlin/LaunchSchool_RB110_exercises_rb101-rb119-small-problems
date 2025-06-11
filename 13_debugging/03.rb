@@ -45,9 +45,25 @@ operator on line 5 really necessary in order to return a Boolean from our
 method?
 =end
 
+=begin
+The ternary operator is unnecessary because the comparison operator already
+returns a boolean value. There is no need to specify it using a ternary
+operator.
+=end
+
 def valid_series?(nums)
   return false if nums.sum != 47
 
   odd_count = nums.count { |n| n.odd? }
   odd_count == 3 # No, the ternary operator on line 5 is not necessary
+end
+
+# By Bob Rodes
+# Due to the possibility of such issue arising, some prefer to put the literal
+# first (before the comparison operator) just in case:
+3 == count ? true : false
+
+# By Juliette Sinibardy
+def valid_series?(nums)
+  nums.count(&:odd?) == 3 && nums.sum == 47
 end

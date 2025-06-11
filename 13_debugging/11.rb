@@ -21,7 +21,7 @@ the block gets a chance to be passed to sort. To fix the issue, add a pair of
 parentheses around arr.sort and its block.
 =end
 
-# Fix
+# FIX
 arr = ["9", "8", "7", "10", "11"]
 p (arr.sort do |x, y|
     y.to_i <=> x.to_i

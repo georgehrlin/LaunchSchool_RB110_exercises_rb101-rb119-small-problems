@@ -24,7 +24,7 @@ p reverse_sentence('how are you doing')
 # expected output: 'doing you are how'
 
 =begin
-Without running this code, I think that it raises an error because of line 16.
+Without running this code, I think it raises an error because of line 7.
 words points to an array with string elements, so words[i] returns a string.
 reversed_words points to an empty array. The issue is a string cannot be called
 with + and an array as the argument.
@@ -45,4 +45,19 @@ def reverse_sentence(sentence)
 end
 
 p reverse_sentence('how are you doing')
-# expected output: 'doing you are how'
+
+# Alternatively
+def reverse_sentence(sentence)
+  words = sentence.split(' ')
+  reversed_words = []
+
+  i = 0
+  while i < words.length
+    reversed_words.prepend(words[i])
+    i += 1
+  end
+
+  reversed_words.join(' ')
+end
+
+p reverse_sentence('how are you doing')

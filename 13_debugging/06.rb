@@ -32,18 +32,17 @@ main problems with the method move:
 leading elements to be moved from the first array to the second. However, the
 current implementation of move fails to use n at all in its definition.
 2. move lacks a stopping condition for its recursion. As of now, once move is
-called, it will keep calling itself inifinitely, overflowing the stack and
+called, it will keep calling itself inifinitely, overflowing the call stack and
 leading to a SystemStackError.
 =end
 
 =begin
-CORRECTION
+ADDENDUM
 
 It is not entirely correct to say that "move fails to use n at all in its
-definition," because n is actually reassigned to n - 1 in every recursion call.
+definition."
 =end
 
-=begin
 # Fix
 def move(n, from_array, to_array)
   to_array << from_array.shift
@@ -58,7 +57,6 @@ move(2, todo, done)
 
 p todo # should be: ['coffee with Tom']
 p done # should be: ['apply sunscreen', 'go to the beach', 'study', 'walk the dog']
-=end
 
 # OFFICIAL SOLUTION
 def move(n, from_array, to_array)

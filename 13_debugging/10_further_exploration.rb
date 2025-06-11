@@ -67,15 +67,16 @@ Because idf("quantum", documents) always returns Inifnity, tfidf returns
 Infinity if tf returns any value other than 0, or NaN if tf returns 0.
 =end
 
-=begin
-# Fix
-# idf shoud return 0 if number_of_documents_with_term is assigned 0
+# FIX
+# idf shoud return 0.0 if number_of_documents_with_term is assigned 0
+# I'm also using an updated approach in this new version of idf
+
 def idf(term, documents)
   number_of_documents = documents.length
   number_of_documents_with_term = documents.count { |d| tf(term, d) > 0 }
-  return 0 if number_of_documents_with_term == 0
+
+  return 0.0 if number_of_documents_with_term == 0
   quotient = number_of_documents.fdiv(number_of_documents_with_term)
 
   Math.log(quotient)
 end
-=end

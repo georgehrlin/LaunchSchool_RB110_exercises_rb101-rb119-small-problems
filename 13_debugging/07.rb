@@ -28,7 +28,7 @@ puts neutralize('These dull boring cards are part of a chaotic board game.')
 
 =begin
 The reason that the word boring is not removed is because the iteration of
-boring is skpped due to the words array being mutated during the iteration.
+boring is skpped due to the words array being mutated during iteration.
 
 Once the input sentence is broken up into an array of individual words on line
 2, line 3 begins an iteration over each word of the sentence. When the
@@ -39,7 +39,7 @@ skipping the word boring altogether, so boring does not get removed even though
 it'd qualify for deletion by line 4.
 =end
 
-# Fix
+# FIX
 def neutralize(sentence)
   valid_words = []
   words = sentence.split(' ')
