@@ -44,7 +44,7 @@ A
     - Move on to next char
 - Return input str
 =end
-=begin
+
 def crunch(str)
   chars = str.chars
   idx_first = 0
@@ -61,8 +61,7 @@ def crunch(str)
 
   chars.join
 end
-=end
-=begin
+
 # Without converting input str into an array
 def crunch(str)
   idx_first = 0
@@ -74,12 +73,11 @@ def crunch(str)
     else
       idx_first += 1
       idx_next += 1
-   end
+    end
   end
 
    str
 end
-=end
 
 # OFFICIAL SOLUTION
 def crunch(text)
@@ -91,9 +89,3 @@ def crunch(text)
   end
   crunch_text
 end
-
-p crunch('ddaaiillyy ddoouubbllee') == 'daily double'
-p crunch('4444abcabccba') == '4abcabcba'
-p crunch('ggggggggggggggg') == 'g'
-p crunch('a') == 'a'
-p crunch('') == ''

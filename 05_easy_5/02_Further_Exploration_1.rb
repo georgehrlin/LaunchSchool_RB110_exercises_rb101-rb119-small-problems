@@ -11,6 +11,7 @@ write a single calculation with % that performs the entire normalization
 operation in one line of code. Give it a try, but don't spend too much time on
 it.
 =end
+
 MINUTES_PER_HOUR = 60
 HOURS_PER_DAY = 24
 MINUTES_PER_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR

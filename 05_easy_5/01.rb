@@ -44,6 +44,7 @@ General:
 - Until input string is empty
   - Remove first character and call ord on the return value
 =end
+
 =begin
 def ascii_value(str)
   ascii_sum = 0
@@ -53,25 +54,41 @@ def ascii_value(str)
     idx += 1
     break if idx >= str.size
   end
+
   ascii_sum
 end
+
+# Improve: str.size.times do |idx| instead of managing idx manually
 =end
 
+def ascii_value(str)
+  ascii_sum = 0
+  str.size.times do |idx|
+    ascii_sum += str[idx].ord
+  end
+
+  ascii_sum
+end
+
+=begin
 def ascii_value(str)
   ascii_sum = 0
   str.each_char { |char| ascii_sum += char.ord }
   ascii_sum
 end
+=end
 
-# p ascii_value('Four score') == 984
-# p ascii_value('Launch School') == 1251
-# p ascii_value('a') == 97
-# p ascii_value('') == 0
+p ascii_value('Four score') == 984
+p ascii_value('Launch School') == 1251
+p ascii_value('a') == 97
+p ascii_value('') == 0
 
+=begin
 # By Mitch Mills
 def ascii_value(string)
   string.sum
 end
+=end
 
 =begin
 FURTHER EXPLORATION

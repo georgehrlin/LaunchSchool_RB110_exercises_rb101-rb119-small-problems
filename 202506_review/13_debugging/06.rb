@@ -1,7 +1,7 @@
 def move(n, from_array, to_array)
   to_array << from_array.shift
   n -= 1
-  move( n, from_array, to_array) if n > 0
+  move( n, from_array, to_array) if (n > 0 && !from_array.empty?)
 end
 
 # Example
