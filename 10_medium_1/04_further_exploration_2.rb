@@ -4,8 +4,8 @@ to represent our 1000 lights instead of a Hash, how would that change our code?
 =end
 
 =begin
-My original answer to the question used an array to represent the lights, so I
-will modify the Official Solution here to use an array instead.
+My original answer to the question (the old one) used an array to represent the
+lights, so I will modify the Official Solution here to use an array instead.
 =end
 
 def initialize_lights(number_of_lights)

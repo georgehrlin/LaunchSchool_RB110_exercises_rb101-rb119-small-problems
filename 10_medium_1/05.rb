@@ -92,8 +92,6 @@ Draft
 def diamond(size)
   mid_point = size / 2
 
-  puts ' '
-
   num_star = 1
   mid_point.times do |n| 
     puts "#{' ' * (mid_point - n)}#{'*' * num_star}"

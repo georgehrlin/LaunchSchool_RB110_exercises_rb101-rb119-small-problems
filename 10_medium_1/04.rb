@@ -44,7 +44,6 @@ A
 - Finally, return arr of ints that are indices at which the vals are 1
 =end
 
-=begin
 def flip_switch(val)
   val == 0 ? 1 : 0
 end
@@ -71,33 +70,3 @@ def switching_lights(num_of_lights)
 
   lights_on_positions(lights)
 end
-=end
-
-def initialize_lights(number_of_lights)
-  lights = Hash.new
-  1.upto(number_of_lights) { |number| lights[number] = "off"}
-  lights
-end
-
-def on_lights(lights)
-  lights.select { |_position, state| state == 'on' }.keys
-end
-
-def toggle_every_nth_light!(lights, nth)
-  lights.each do |position, state|
-    if position % nth == 0
-      lights[position] = (state == 'off') ? 'on' : 'off'
-    end
-  end
-end
-
-def toggle_lights(number_of_lights)
-  lights = initialize_lights(number_of_lights)
-  1.upto(lights.size) do |iteration_number|
-    toggle_every_nth_light!(lights, iteration_number)
-  end
-
-  on_lights(lights)
-end
-
-p toggle_lights(10) # == [1, 4, 9]
